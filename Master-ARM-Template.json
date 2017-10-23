@@ -1,0 +1,227 @@
+{
+
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+
+    "contentVersion": "1.0.0.0",
+
+    "parameters": {
+
+     "storageAccountName": {
+
+      "type": "string",
+
+      "metadata": {
+
+        "description": "Name for the Storage Account."
+
+      }
+
+    }
+
+    },
+
+  "variables": {
+
+    "apiVersion": "2017-10-17",
+ 
+   "storageAccountName": "[parameters('storageAccountName')]",
+
+    "location": "[resourceGroup().location]",
+
+    "storageAccountType": "Standard_LRS",
+
+    "sharedBaseUrl" : "#BaseUrl for ARM Templates",
+
+   "storageaccountTemplate" : {
+
+      "templateUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-storageaccount.json')]",
+
+      "paramUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-storageaccount.json')]"
+
+    },
+
+   "vNetSubNetTemplate" : {
+
+      "templateUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-vnetsubnet.json')]",
+
+      "paramUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-vnetsubnet.parameters.json')]"
+
+    },
+
+     "vmTemplate" : {
+
+      "templateUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-vm.json')]",
+
+      "paramUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-vm.parameters.json')]"
+
+    },
+    "dbserverTemplate" : {
+
+      "templateUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-dbserver.json')]",
+
+      "paramUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-dbserver.parameters.json')]"
+
+    }
+
+  },
+
+   "resources": [ {  }  ],
+
+      {
+
+      "apiVersion": "[variables('apiVersion')]",
+
+      "name": "storageaccountLinked",
+
+      "type": "Microsoft.Resources/deployments",
+
+      "dependsOn": [
+
+        "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]"
+
+      ],
+
+      "properties": {
+
+        "mode": "Incremental",
+
+        "templateLink": {
+
+          "uri": "[variables('storageaccountTemplate').templateUrl]",
+
+          "contentVersion": "1.0.0.0"
+
+        },
+
+        "parametersLink": {
+
+          "uri": "[variables('storageaccountTemplate').paramUrl]",
+
+          "contentVersion": "1.0.0.0"
+
+        }
+
+      }
+
+    },
+
+  {
+
+      "apiVersion": "[variables('apiVersion')]",
+
+      "name": "vnetsubnetLinked",
+
+      "type": "Microsoft.Resources/deployments",
+
+      "dependsOn": [
+
+        "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+
+        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+
+      ],
+
+      "properties": {
+
+        "mode": "Incremental",
+
+        "templateLink": {
+
+          "uri": "[variables('vNetSubNetTemplate').templateUrl]",
+
+          "contentVersion": "1.0.0.0"
+
+        },
+
+        "parametersLink": {
+
+          "uri": "[variables('vNetSubNetTemplate').paramUrl]",
+
+          "contentVersion": "1.0.0.0"
+
+        }
+
+      }
+
+    },
+
+    {
+
+      "apiVersion": "[variables('apiVersion')]",
+
+      "name": "vmLinked",
+
+      "type": "Microsoft.Resources/deployments",
+
+      "dependsOn": [
+
+        "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+
+        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+ 
+     ],
+
+      "properties": {
+
+        "mode": "Incremental",
+
+        "templateLink": {
+
+          "uri": "[variables('vmTemplate').templateUrl]",
+
+          "contentVersion": "1.0.0.0"
+
+        },
+
+        "parametersLink": {
+
+          "uri": "[variables('vmTemplate').paramUrl]",
+
+          "contentVersion": "1.0.0.0"
+
+        }
+      }
+
+    },
+
+   {
+
+      "apiVersion": "2015-01-01",
+
+      "name": "dbserverLinked",
+
+      "type": "Microsoft.Resources/deployments",
+
+      "dependsOn": [
+
+        "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+
+        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+
+      ],
+
+      "properties": {
+
+        "mode": "Incremental",
+
+        "templateLink": {
+
+          "uri": "[variables('dbserverTemplate').templateUrl]",
+
+          "contentVersion": "1.0.0.0"
+
+        },
+
+        "parametersLink": {
+
+          "uri": "[variables('dbserverTemplate').paramUrl]",
+
+          "contentVersion": "1.0.0.0"
+
+        }
+
+      }
+
+   }
+
+}
