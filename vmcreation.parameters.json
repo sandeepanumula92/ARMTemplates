@@ -33,7 +33,7 @@
            "value": "nestlevm"
        },
       "dnsLabelPrefix": {
-           "value": "dns"
+           "value": "nestledns"
        },
       "windowsOSVersion": {
            "value": "2016-Datacenter"
