@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
    "vnetName": {
-          "value": "nestlepocvnet1"
+          "value": "nestlepocvnet11"
           },
       "subnet1Name": {
-          "value": "nestlepoc1subnet1"
+          "value": "nestlepoc11subnet1"
           },
       "subnet2Name": {
-          "value": "nestlepoc1subnet2"
+          "value": "nestlepoc11subnet2"
           },
       "subnet3Name": {
-          "value": "nestlepoc1subnet3"
+          "value": "nestlepoc11subnet3"
           },
       "vnetAddressPrefix": {
           "value": "10.0.0.0/16"
