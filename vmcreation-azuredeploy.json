@@ -22,7 +22,7 @@
     },
    "storageaccountname": {
       "type": "string",
-      "defaultValue": "nestlepocsa",
+      "defaultValue": "nestlepocsa2",
       "metadata": {
         "description": "Storage Account Name"
       }
