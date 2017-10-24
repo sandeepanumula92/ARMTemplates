@@ -132,7 +132,7 @@
       }
     },
     {
-      "apiVersion": "2016-09-01",
+      "apiVersion": "2017-06-01",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[variables('nic2')]",
       "location": "[resourceGroup().location]",    
@@ -154,7 +154,7 @@
       }
     },
     {
-      "apiVersion": "2016-09-01",
+      "apiVersion": "2017-06-01",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[variables('vmName')]",
       "location": "[resourceGroup().location]",      
