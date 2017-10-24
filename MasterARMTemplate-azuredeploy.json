@@ -172,7 +172,8 @@
       "metadata": {
         "description": "Public IP Address Name."
       }
-    }, "nicName": {
+    },
+   "nicName": {
       "type": "string",
       "metadata": {
         "description": "nic Name."
