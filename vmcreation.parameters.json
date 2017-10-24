@@ -24,7 +24,7 @@
            "value": "vmPassword"
        }, 
       "virtualMachineName": {
-           "value": "nestlevm"
+           "value": "nestlevm1"
        },
       "dnsLabelPrefix": {
            "value": "nestledns11"
