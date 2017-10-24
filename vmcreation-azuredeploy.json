@@ -11,29 +11,29 @@
     "dnsLabelPrefix": {
       "type": "string"
     },
-   "storageaccountname": {
+    "storageaccountname": {
       "type": "string",
       "defaultValue": "nestlepocsa2"
     },
-   "virtualMachineName": {
+    "virtualMachineName": {
       "type": "string"
     },
- "virtualMachineSize": {
+    "virtualMachineSize": {
       "type": "string"
     },
-  "publicIPAddressName": {
+    "publicIPAddressName": {
       "type": "string"
     },
-   "vnetName": {
+    "vnetName": {
       "type": "string"
     },
- "subnet1Name": {
+    "subnet1Name": {
       "type": "string"
     },
-  "subnet2Name": {
+    "subnet2Name": {
       "type": "string"
     },
- "nicName": {
+    "nicName": {
       "type": "string"
     },
     "windowsOSVersion": {
@@ -50,48 +50,93 @@
     }
   },
   "variables": {
-    "storageAccountName": "[parameters('storageaccountname')]",
-    "subnet1Name": "[parameters('subnet1Name')]",
-    "subnet2Name": "[parameters('subnet2Name')]",
     "nic1": "nic-1",
     "nic2": "nic-2",
     "nicName": "[parameters('nicName')]",
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
-    "vmName": "[parameters('virtualMachineName')]",
-    "virtualNetworkName": "[parameters('vnetName')]",
+    "storageAccountName": "[parameters('storageaccountname')]",
+    "subnet1Name": "[parameters('subnet1Name')]",
     "subnet1Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnet1Name'))]",
-    "subnet2Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnet2Name'))]"
+    "subnet2Name": "[parameters('subnet2Name')]",
+    "subnet2Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnet2Name'))]",
+    "virtualNetworkName": "[parameters('vnetName')]",
+    "vmName": "[parameters('virtualMachineName')]"
   },
   "resources": [
-   {
+    {
       "apiVersion": "2017-06-01",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('publicIPAddressName')]",
       "location": "[resourceGroup().location]",
+      "name": "[variables('publicIPAddressName')]",
       "properties": {
-        "publicIPAllocationMethod": "Dynamic",
-        "dnsSettings": {
-          "domainNameLabel": "[parameters('dnsLabelPrefix')]"
+        "publicIpAllocationMethod": "Dynamic"
+      },
+      "type": "Microsoft.Network/publicIPAddresses"
+    },   
+    {
+      "name": "[variables('nic1')]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2017-06-01",
+      "location": "[resourceGroup().location]",      
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "subnet": {
+                "id": "[variables('subnet1Ref')]"
+              },
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIpAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]"
+              }
+            }
+          }
+        ],
+        "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
         }
+      }
+    },
+    {
+      "name": "[variables('nic2')]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2017-06-01",
+      "location": "[resourceGroup().location]",
+      "comments": "This will be your Secondary NIC",
+      "dependsOn": [
+        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+      ],
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "subnet": {
+                "id": "[variables('subnet2Ref')]"
+              },
+              "privateIPAllocationMethod": "Dynamic"
+            }
+          }
+        ]
       }
     },
     {
       "apiVersion": "2017-03-30",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[variables('vmName')]",
-      "location": "[resourceGroup().location]",      
+      "location": "[resourceGroup().location]",
       "properties": {
         "hardwareProfile": {
           "vmSize": "[parameters('virtualMachineSize')]"
         },
         "osProfile": {
-                    "computerName": "[parameters('virtualMachineName')]",
-                    "adminUsername": "[parameters('adminUsername')]",
-                    "adminPassword": "[parameters('adminPassword')]",
-                    "windowsConfiguration": {
-                        "provisionVmAgent": "true"
-                    }
-                },
+          "computerName": "[parameters('virtualMachineName')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPassword')]",
+          "windowsConfiguration": {
+            "provisionVmAgent": "true"
+          }
+        },
         "storageProfile": {
           "imageReference": {
             "publisher": "MicrosoftWindowsServer",
@@ -109,7 +154,23 @@
               "createOption": "Empty"
             }
           ]
-        }       
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "properties": {
+                "primary": true
+              },
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic1'))]"
+            },
+            {
+              "properties": {
+                "primary": false
+              },
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic2'))]"
+            }
+          ]
+        }
       }
     }
   ],
