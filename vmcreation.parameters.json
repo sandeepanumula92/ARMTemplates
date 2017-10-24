@@ -21,7 +21,7 @@
            "value": "vmAdmin"
        },
       "adminPassword": {
-           "value": "vmPassword"
+           "value": "vmPassword!123"
        }, 
       "virtualMachineName": {
            "value": "nestlevm1"
