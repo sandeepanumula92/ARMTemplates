@@ -1,0 +1,198 @@
+{
+
+    "$schema": "https://schema.management.azure.com/schemas/2015-10-23/deploymentTemplate.json#",
+
+    "contentVersion": "1.0.0.0",
+
+    "parameters": {
+
+     "vnetName": {
+
+      "type": "string",
+
+      "defaultValue": "nestlepocvnet",
+
+      "metadata": {
+
+        "description": "VNet name"
+
+      }
+
+    },
+
+    "vnetAddressPrefix": {
+
+      "type": "string",
+
+      "defaultValue": "10.155.0.0/25",
+
+      "metadata": {
+
+        "description": "Address prefix"
+
+      }
+
+    },
+
+    "subnet1Prefix": {
+
+      "type": "string",
+
+      "defaultValue": "10.155.0.0/26",
+
+      "metadata": {
+
+        "description": "nestlepocsubnet1 Prefix"
+
+      }
+
+    },
+
+    "subnet1Name": {
+
+      "type": "string",
+
+      "defaultValue": "nestlepocsubnet1",
+
+      "metadata": {
+
+        "description": "nestlepocsubnet1"
+
+      }
+
+    },
+
+    "subnet2Prefix": {
+
+      "type": "string",
+ 
+     "defaultValue": "10.155.0.64/26",
+
+      "metadata": {
+
+        "description": "nestlepocsubnet2 Prefix"
+
+      }
+
+    },
+ 
+   "subnet2Name": {
+
+      "type": "string",
+
+      "defaultValue": "nestlepocsubnet2",
+
+      "metadata": {
+
+        "description": "nestlepocsubnet2 Name"
+
+      }
+
+    },
+ 
+ "subnet3Prefix": {
+
+      "type": "string",
+
+      "defaultValue": "10.155.1.64/26",
+
+      "metadata": {
+
+        "description": "nestlepocsubnet3 Prefix"
+ 
+     }
+
+    },
+
+    "subnet3Name": {
+
+      "type": "string",
+
+      "defaultValue": "nestlepocsubnet3",
+
+      "metadata": {
+
+        "description": "nestlepocsubnet3 SubnetName"
+
+      }
+
+    }
+
+    },
+
+  "variables": {
+
+    "apiVersion": "2017-10-23"
+    
+  },
+
+    "resources": [
+
+        {
+
+      "apiVersion": "[variables('apiVersion')]",
+
+      "type": "Microsoft.Network/virtualNetworks",
+
+      "name": "[parameters('vnetName')]",
+
+      "location": "[resourceGroup().location]",
+
+      "properties": {
+
+        "addressSpace": {
+
+          "addressPrefixes": [
+
+            "[parameters('vnetAddressPrefix')]"
+
+          ]
+
+        }
+
+        },
+
+        "subnets": [
+
+          {
+
+            "name": "[parameters('subnet1Name')]",
+
+            "properties": {
+
+              "addressPrefix": "[parameters('subnet1Prefix')]"
+
+            }
+
+          },
+
+          {
+
+            "name": "[parameters('subnet2Name')]",
+
+            "properties": {
+
+              "addressPrefix": "[parameters('subnet2Prefix')]"
+
+            }
+
+            },
+
+          {
+
+            "name": "[parameters('subnet3Name')]",
+ 
+           "properties": {
+              "addressPrefix": "[parameters('subnet3Prefix')]"
+
+            }
+
+     }
+
+     ]
+ 
+     }
+
+    ]
+
+}

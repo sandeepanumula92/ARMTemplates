@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2017-10-23/deploymentTemplate.json#",
+
+    "contentVersion": "1.0.0.0",
+ 
+   "parameters": {
+
+      "storageaccountname": {
+
+          "value": "nestlepocsa"
+
+          },
+
+       "storageAccountType": {
+
+           "value": "Standard_GRS"
+
+       } 
+  }
+
+}

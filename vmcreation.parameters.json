@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2017-10-23/deploymentTemplate.json#",
+
+    "contentVersion": "1.0.0.0",
+ 
+   "parameters": {
+
+      "storageaccountname": {
+          "value": "nestlepocsa"
+          },
+
+      "vnetName": {
+          "value": "nestlepocvnet"
+          },
+
+      "subnet1Name": {
+          "value": "nestlepocsubnet1"
+          },
+
+      "virtualMachineSize": {
+           "value": "Standard_DS1_v2"
+       },
+ 
+      "adminUsername": {
+           "value": "vmAdmin"
+       },
+
+      "adminPassword": {
+           "value": "vmPassword"
+       },
+ 
+      "virtualMachineName": {
+           "value": "nestlevm"
+       },
+      "dnsLabelPrefix": {
+           "value": "dns"
+       },
+      "windowsOSVersion": {
+           "value": "2016-Datacenter"
+       },
+      "publicIPAddressName": {
+           "value": "PublicIP"
+       },
+      "nicName": {
+           "value": "myVMNic"
+       }
+  }
+
+}
