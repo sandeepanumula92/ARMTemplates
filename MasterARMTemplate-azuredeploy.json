@@ -206,7 +206,7 @@
 
     "storageAccountType": "[parameters('storageAccountType')]",
 
-    "sharedBaseUrl" : "#BaseUrl for ARM Templates",
+    "sharedBaseUrl" : "https://github.com/sandeepanumula92/ARMTemplates/blob/master/",
 
    "storageaccountTemplate" : {
 
