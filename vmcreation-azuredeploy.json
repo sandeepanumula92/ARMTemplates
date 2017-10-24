@@ -3,53 +3,29 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "adminUsername": {
-      "type": "string",
-      "metadata": {
-        "description": "Username for the Virtual Machine."
-      }
+      "type": "string"
     },
     "adminPassword": {
-      "type": "securestring",
-      "metadata": {
-        "description": "Password for the Virtual Machine."
-      }
+      "type": "securestring"
     },
     "dnsLabelPrefix": {
-      "type": "string",
-      "metadata": {
-        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
-      }
+      "type": "string
     },
    "storageaccountname": {
       "type": "string",
-      "defaultValue": "nestlepocsa2",
-      "metadata": {
-        "description": "Storage Account Name"
-      }
+      "defaultValue": "nestlepocsa2"
     },
    "virtualMachineName": {
-      "type": "string",
-      "metadata": {
-        "description": "Virtual Machine Name."
-      }
+      "type": "string"
     },
  "virtualMachineSize": {
-      "type": "string",
-      "metadata": {
-        "description": "Virtual Machine Size."
-      }
+      "type": "string"
     },
   "publicIPAddressName": {
-      "type": "string",
-      "metadata": {
-        "description": "Public IP Address Name."
-      }
+      "type": "string"
     },
    "vnetName": {
-      "type": "string",
-      "metadata": {
-        "description": "VNET Name."
-      }
+      "type": "string"
     },
  "subnet1Name": {
       "type": "string"
@@ -186,13 +162,7 @@
                             "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic2'))]"
                         }
                     ]
-        },
-       "diagnosticsProfile": {
-              "bootDiagnostics": {
-                "enabled": true,
-                "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2017-06-01').primaryEndpoints['blob']]"
-              }
-            }       
+        }
       }
     }
   ],
