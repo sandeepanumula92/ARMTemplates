@@ -52,22 +52,13 @@
       }
     },
  "subnet1Name": {
-      "type": "string",
-      "metadata": {
-        "description": "subnet1 Name."
-      }
+      "type": "string"
     },
   "subnet2Name": {
-      "type": "string",
-      "metadata": {
-        "description": "subnet2 Name."
-      }
+      "type": "string"
     },
  "nicName": {
-      "type": "string",
-      "metadata": {
-        "description": "nic Name."
-      }
+      "type": "string"
     },
     "windowsOSVersion": {
       "type": "string",
@@ -79,22 +70,21 @@
         "2016-Nano-Server",
         "2016-Datacenter-with-Containers",
         "2016-Datacenter"
-      ],
-      "metadata": {
-        "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version."
-      }
+      ]
     }
   },
   "variables": {
     "storageAccountName": "[parameters('storageaccountname')]",
+    "subnet1Name": "[parameters('subnet1Name')]",
+    "subnet2Name": "[parameters('subnet2Name')]",
     "nic1": "nic-1",
     "nic2": "nic-2",
     "nicName": "[parameters('nicName')]",
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "vmName": "[parameters('virtualMachineName')]",
     "virtualNetworkName": "[parameters('vnetName')]",
-    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), parameters('subnet1Name'))]",
-    "subnetRef1": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), parameters('subnet2Name'))]"
+    "subnet1Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnet1Name'))]",
+    "subnet2Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnet2Name'))]",
   },
   "resources": [
    {
@@ -116,15 +106,18 @@
       "location": "[resourceGroup().location]",    
       "properties": {
         "ipConfigurations": [
-          {
-            "name": "ipconfig1",
-            "properties": {
-              "privateIPAllocationMethod": "Dynamic",
-              "subnet": {
-                "id": "[variables('subnetRef')]"
+           {
+                "name": "ipconfig1",
+                "properties": {
+                  "subnet": {
+                    "id": "[variables('subnet1Ref')]"
+                  },
+                  "privateIPAllocationMethod": "Dynamic",
+                  "publicIpAddress": {
+                    "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIPAddressName'))]"
+                  }
+                }
               }
-            }
-          }
         ]
       }
     },
@@ -136,13 +129,11 @@
       "properties": {
         "ipConfigurations": [
           {
-            "name": "ipconfig1",
-            "properties": {
-              "privateIPAllocationMethod": "Dynamic",
-              "subnet": {
-                "id": "[variables('subnetRef1')]"
-              }
-            }
+                "name": "ipconfig1",
+                "properties": {
+                  "subnet": { "id": "[variables('subnet2Ref')]"  },
+                  "privateIPAllocationMethod": "Dynamic"
+                }
           }
         ]
       }
@@ -195,7 +186,13 @@
                             "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic2'))]"
                         }
                     ]
-        }       
+        },
+       "diagnosticsProfile": {
+              "bootDiagnostics": {
+                "enabled": true,
+                "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2017-06-01').primaryEndpoints['blob']]"
+              }
+            }       
       }
     }
   ],
