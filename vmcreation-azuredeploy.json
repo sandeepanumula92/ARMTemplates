@@ -85,7 +85,6 @@
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "vmName": "[parameters('virtualMachineName')]",
     "virtualNetworkName": "[parameters('vnetName')]",
-     "diagStorageAccountName": "[concat('diags',uniqueString(resourceGroup().id))]",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), parameters('subnet1Name'))]"
   },
   "resources": [
@@ -166,7 +165,7 @@
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": true,
-            "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('diagStorageAccountName')), '2017-06-01').primaryEndpoints['blob']]"
+            "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))).primaryEndpoints.blob]"
           }
         }
       }
