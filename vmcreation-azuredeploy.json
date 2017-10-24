@@ -9,7 +9,7 @@
       "type": "securestring"
     },
     "dnsLabelPrefix": {
-      "type": "string
+      "type": "string"
     },
    "storageaccountname": {
       "type": "string",
