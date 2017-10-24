@@ -80,7 +80,6 @@
     }
   },
   "variables": {
-    "apiVersion": "2017-10-23",
     "storageAccountName": "[parameters('storageaccountname')]",
     "nicName": "[parameters('nicName')]",
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
@@ -90,7 +89,7 @@
   },
   "resources": [
    {
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2016-09-01",
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[variables('publicIPAddressName')]",
       "location": "[resourceGroup().location]",
@@ -102,7 +101,7 @@
       }
     },
  {
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2016-09-01",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[variables('nicName')]",
       "location": "[resourceGroup().location]",
@@ -128,7 +127,7 @@
       }
     },
     {
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2016-09-01",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[variables('vmName')]",
       "location": "[resourceGroup().location]",
