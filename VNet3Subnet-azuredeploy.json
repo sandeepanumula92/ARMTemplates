@@ -33,6 +33,12 @@
       }
 
     },
+     "virtualMachineSize": {
+      "type": "string",
+      "metadata": {
+        "description": "Virtual Machine Size."
+      }
+    },
 
     "subnet1Prefix": {
 
