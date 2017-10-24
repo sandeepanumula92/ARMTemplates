@@ -6,7 +6,7 @@
    "parameters": {
 
       "storageaccountname": {
-          "value": "nestlepocsa"
+          "value": "nestlepocsa2"
           },
 
       "vnetName": {
