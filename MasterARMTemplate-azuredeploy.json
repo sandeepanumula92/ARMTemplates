@@ -1,5 +1,4 @@
 {
-
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
@@ -11,115 +10,64 @@
         "Standard_GRS",
         "Standard_ZRS",
         "Premium_LRS"
-      ],
-      "metadata": {
-        "description": "Storage Account type"
-      }
+      ]
     },
     "storageaccountname": {
       "type": "string",
-      "defaultValue": "nestlepocsa2",
-      "metadata": {
-        "description": "Storage Account Name"
-      }
+      "defaultValue": "nestlepocsa2"
     },
     "vnetName": {
       "type": "string",
-      "defaultValue": "nestlepocvnet",
-      "metadata": {
-        "description": "VNet name"
-      }
+      "defaultValue": "nestlepocvnet"
     },
     "vnetAddressPrefix": {
       "type": "string",
-      "defaultValue": "10.155.0.0/25",
-      "metadata": {
-        "description": "Address prefix"
-      }
+      "defaultValue": "10.155.0.0/25"
     },
     "subnet1Prefix": {
       "type": "string",
-      "defaultValue": "10.155.0.0/26",
-      "metadata": {
-        "description": "nestlepocsubnet1 Prefix"
-      }
+      "defaultValue": "10.155.0.0/26"
     },
     "subnet1Name": {
       "type": "string",
-      "defaultValue": "nestlepocsubnet1",
-      "metadata": {
-        "description": "nestlepocsubnet1"
-      }
+      "defaultValue": "nestlepocsubnet1"
     },
     "subnet2Prefix": {
       "type": "string",
-      "defaultValue": "10.155.0.64/26",
-      "metadata": {
-        "description": "nestlepocsubnet2 Prefix"
-      }
+      "defaultValue": "10.155.0.64/26"
     },
     "subnet2Name": {
       "type": "string",
-      "defaultValue": "nestlepocsubnet2",
-      "metadata": {
-        "description": "nestlepocsubnet2 Name"
-      }
+      "defaultValue": "nestlepocsubnet2"
     },
     "subnet3Prefix": {
       "type": "string",
-      "defaultValue": "10.155.1.64/26",
-      "metadata": {
-        "description": "nestlepocsubnet3 Prefix"
-      }
+      "defaultValue": "10.155.1.64/26"
     },
     "subnet3Name": {
       "type": "string",
-      "defaultValue": "nestlepocsubnet3",
-      "metadata": {
-        "description": "nestlepocsubnet3 SubnetName"
-      }
+      "defaultValue": "nestlepocsubnet3"
     },
     "adminUsername": {
-      "type": "string",
-      "metadata": {
-        "description": "Username for the Virtual Machine."
-      }
+      "type": "string"
     },
     "adminPassword": {
-      "type": "securestring",
-      "metadata": {
-        "description": "Password for the Virtual Machine."
-      }
+      "type": "securestring"
     },
     "dnsLabelPrefix": {
-      "type": "string",
-      "metadata": {
-        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
-      }
+      "type": "string"
     },
     "virtualMachineName": {
-      "type": "string",
-      "metadata": {
-        "description": "Virtual Machine Name."
-      }
+      "type": "string"
     },
     "virtualMachineSize": {
-      "type": "string",
-      "metadata": {
-        "description": "Virtual Machine Size."
-      }
+      "type": "string"
     },
     "publicIPAddressName": {
-      "type": "string",
-      "metadata": {
-        "description": "Public IP Address Name."
-      }
+      "type": "string"
     },
     "nicName": {
-      "type": "string",
-      "metadata": {
-        "description": "nic Name."
-      }
+      "type": "string"
     },
     "windowsOSVersion": {
       "type": "string",
@@ -131,10 +79,7 @@
         "2016-Nano-Server",
         "2016-Datacenter-with-Containers",
         "2016-Datacenter"
-      ],
-      "metadata": {
-        "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version."
-      }
+      ]
     }
   },
   "variables": {
