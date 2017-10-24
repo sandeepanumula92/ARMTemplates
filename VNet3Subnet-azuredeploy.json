@@ -1,12 +1,12 @@
 {
 
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 
-    "contentVersion": "1.0.0.0",
+  "contentVersion": "1.0.0.0",
 
-    "parameters": {
+  "parameters": {
 
-     "vnetName": {
+    "vnetName": {
 
       "type": "string",
 
@@ -65,8 +65,8 @@
     "subnet2Prefix": {
 
       "type": "string",
- 
-     "defaultValue": "10.155.0.64/26",
+
+      "defaultValue": "10.155.0.64/26",
 
       "metadata": {
 
@@ -75,8 +75,8 @@
       }
 
     },
- 
-   "subnet2Name": {
+
+    "subnet2Name": {
 
       "type": "string",
 
@@ -89,8 +89,8 @@
       }
 
     },
- 
- "subnet3Prefix": {
+
+    "subnet3Prefix": {
 
       "type": "string",
 
@@ -99,8 +99,8 @@
       "metadata": {
 
         "description": "nestlepocsubnet3 Prefix"
- 
-     }
+
+      }
 
     },
 
@@ -118,17 +118,17 @@
 
     }
 
-    },
+  },
 
   "variables": {
 
     "apiVersion": "2017-10-23"
-    
+
   },
 
-    "resources": [
+  "resources": [
 
-        {
+    {
 
       "apiVersion": "[variables('apiVersion')]",
 
@@ -142,14 +142,7 @@
 
         "addressSpace": {
 
-          "addressPrefixes": [
-
-            "[parameters('vnetAddressPrefix')]"
-
-          ]
-
-        }
-
+          "addressPrefixes": [ "[parameters('vnetAddressPrefix')]" ]
         },
 
         "subnets": [
@@ -176,23 +169,22 @@
 
             }
 
-            },
+          },
 
           {
 
             "name": "[parameters('subnet3Name')]",
- 
-           "properties": {
+
+            "properties": {
               "addressPrefix": "[parameters('subnet3Prefix')]"
 
             }
 
-     }
+          }
 
-     ]
- 
-     }
-
-    ]
-
+        ]
+      }
+    }
+  ]
 }
+
