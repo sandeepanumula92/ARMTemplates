@@ -14,9 +14,11 @@
           },
 
       "subnet1Name": {
-          "value": "nestlepocsubnet1"
+            "value": "nestlepocsubnet1"
           },
-
+       "subnet2Name": {
+            "value": "nestlepocsubnet2"
+          },
       "virtualMachineSize": {
            "value": "Standard_DS1_v2"
        },
