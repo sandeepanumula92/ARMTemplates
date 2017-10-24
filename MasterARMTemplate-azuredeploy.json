@@ -220,7 +220,7 @@
 
       "templateUrl" : "[concat(variables('sharedBaseUrl'),'VNet3Subnet-azuredeploy.json')]",
 
-      "paramUrl" : "[concat(variables('sharedBaseUrl'),'VNet3Subnet.parameters.json')]"
+      "paramUrl" : "[concat(variables('sharedBaseUrl'),'vnet3subnet.parameters.json')]"
 
     },
   "vmTemplate" : {
