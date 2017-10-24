@@ -91,21 +91,14 @@
               }
             }
           }
-        ],
-        "networkSecurityGroup": {
-          "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
-        }
+        ]
       }
     },
     {
       "name": "[variables('nic2')]",
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",
-      "comments": "This will be your Secondary NIC",
-      "dependsOn": [
-        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
-      ],
+      "location": "[resourceGroup().location]",      
       "properties": {
         "ipConfigurations": [
           {
