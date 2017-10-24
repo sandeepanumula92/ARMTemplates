@@ -212,7 +212,7 @@
 
       "templateUrl" : "[concat(variables('sharedBaseUrl'),'storageaccount-azuredeploy.json')]",
 
-      "paramUrl" : "[concat(variables('sharedBaseUrl'),'azuredeploy-storageaccount.json')]"
+      "paramUrl" : "[concat(variables('sharedBaseUrl'),'storageaccount.parameters.json')]"
 
     },
 
