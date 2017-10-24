@@ -85,7 +85,7 @@
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "vmName": "[parameters('virtualMachineName')]",
     "virtualNetworkName": "[parameters('vnetName')]",
-    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnet1Name'))]"
+    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), parameters('subnet1Name'))]"
   },
   "resources": [
    {
