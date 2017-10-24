@@ -6,18 +6,18 @@
    "parameters": {
 
       "storageaccountname": {
-          "value": "nestlepocsa2"
+          "value": "nestlepocsa3"
           },
 
       "vnetName": {
-          "value": "nestlepocvnet"
+          "value": "nestlepocvnet1"
           },
 
       "subnet1Name": {
-            "value": "nestlepocsubnet1"
+            "value": "nestlepoc1subnet1"
           },
        "subnet2Name": {
-            "value": "nestlepocsubnet2"
+            "value": "nestlepoc1subnet2"
           },
       "virtualMachineSize": {
            "value": "Standard_DS1_v2"
@@ -41,10 +41,10 @@
            "value": "2016-Datacenter"
        },
       "publicIPAddressName": {
-           "value": "nestlePubIP"
+           "value": "nestlePubIP1"
        },
        "nicName": {
-           "value": "mynestleVMNic"
+           "value": "mynestleVMNic1"
        }
   }
 
