@@ -121,7 +121,7 @@
 
   "variables": {
 
-    "apiVersion": "2017-10-23"
+    "apiVersion": "2015-01-01"
 
   },
 
@@ -129,7 +129,7 @@
 
     {
 
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2015-01-01",
 
       "type": "Microsoft.Network/virtualNetworks",
 
