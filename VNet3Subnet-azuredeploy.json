@@ -24,7 +24,7 @@
 
       "type": "string",
 
-      "defaultValue": "10.155.0.0/25",
+      "defaultValue": "10.0.0.0/16",
 
       "metadata": {
 
@@ -37,7 +37,7 @@
 
       "type": "string",
 
-      "defaultValue": "10.155.0.0/26",
+      "defaultValue": "10.0.0.0/24",
 
       "metadata": {
 
@@ -65,7 +65,7 @@
 
       "type": "string",
 
-      "defaultValue": "10.155.0.64/26",
+      "defaultValue": "10.0.1.0/24",
 
       "metadata": {
 
@@ -93,7 +93,7 @@
 
       "type": "string",
 
-      "defaultValue": "10.155.1.64/26",
+      "defaultValue": "10.0.2.0/24",
 
       "metadata": {
 
