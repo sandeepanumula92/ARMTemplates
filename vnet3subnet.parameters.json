@@ -28,15 +28,6 @@
        },
        "virtualMachineSize": {
            "value": "Standard_DS1_v2"
-       },
-       "adminUsername": {
-           "value": "vmAdmin"
-       },
-       "adminPassword": {
-           "value": "vmPassword"
-       },
-       "virtualMachineName": {
-           "value": "nestlevm"
        }
     }
 }
