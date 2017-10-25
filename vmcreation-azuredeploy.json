@@ -69,7 +69,7 @@
       "location": "[resourceGroup().location]",
       "name": "[variables('publicIPAddressName')]",
       "properties": {
-        "publicIpAllocationMethod": "Dynamic"
+        "publicIPAllocationMethod": "Dynamic"
       },
       "type": "Microsoft.Network/publicIPAddresses"
     },
