@@ -13,7 +13,7 @@
     },
     "storageaccountname": {
       "type": "string",
-      "defaultValue": "nestlepocsa2"
+      "defaultValue": "pocsa21"
     },
     "virtualMachineName": {
       "type": "string"
