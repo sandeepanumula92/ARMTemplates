@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0", 
    "parameters": {
       "storageaccountname": {
-          "value": "nestlepocsa31"
+          "value": "nestlepocsa41"
           },
       "vnetName": {
-          "value": "nestlepocvnet11"
+          "value": "nestlepocvnet12"
           },
       "subnet1Name": {
-            "value": "nestlepoc11subnet1"
+            "value": "nestlepoc12subnet1"
           },
        "subnet2Name": {
-            "value": "nestlepoc11subnet2"
+            "value": "nestlepoc12subnet2"
           },
       "virtualMachineSize": {
            "value": "Standard_DS1_v2"
@@ -24,19 +24,19 @@
            "value": "vmPassword!123"
        }, 
       "virtualMachineName": {
-           "value": "nestlevm1"
+           "value": "nestlevm12"
        },
       "dnsLabelPrefix": {
-           "value": "nestledns11"
+           "value": "nestledns12"
        },
       "windowsOSVersion": {
            "value": "2016-Datacenter"
        },
       "publicIPAddressName": {
-           "value": "nestlePubIP11"
+           "value": "nestlePubIP12"
        },
        "nicName": {
-           "value": "mynestleVMNic11"
+           "value": "mynestleVMNic12"
        }
   }
 
