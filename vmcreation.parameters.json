@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0", 
    "parameters": {
       "storageaccountname": {
-          "value": "stnestletemp"
+          "value": "pocsa21"
           },
       "vnetName": {
           "value": "nestlepocvnet12"
