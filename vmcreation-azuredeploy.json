@@ -47,6 +47,13 @@
         "2016-Datacenter-with-Containers",
         "2016-Datacenter"
       ]
+    },
+    "applicationName": {
+      "type": "string",
+      "defaultValue": "POCApp",
+      "metadata": {
+        "description": "Application Tag"
+      }
     }
   },
   "variables": {
