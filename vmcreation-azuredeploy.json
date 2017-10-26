@@ -91,6 +91,10 @@
       "tags": {
         "Application": "[parameters('applicationName')]"
       },
+      "dependsOn": [
+               "[variables('publicIPAddressName')]",
+               "[variables('subnet1Ref'))]"
+      ],
       "properties": {
         "ipConfigurations": [
           {
@@ -116,6 +120,9 @@
       "tags": {
         "Application": "[parameters('applicationName')]"
       },
+      "dependsOn": [
+               "[variables('subnet2Ref'))]"
+      ],
       "properties": {
         "ipConfigurations": [
           {
