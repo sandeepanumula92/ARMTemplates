@@ -4,28 +4,28 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
    "vnetName": {
-          "value": "pocvnetarmtst2"
+          "value": "pocarmvnet1"
           },
       "subnet1Name": {
-          "value": "pocvnetarmtst2s1"
+          "value": "pocarmv1sub1"
           },
       "subnet2Name": {
-          "value": "pocvnetarmtst2s2"
+          "value": "pocarmv1sub2"
           },
       "subnet3Name": {
-          "value": "pocvnetarmtst2s3"
+          "value": "pocarmv1sub3"
           },
       "vnetAddressPrefix": {
-          "value": "20.0.0.0/16" 
+          "value": "40.0.0.0/16" 
          },
        "subnet1Prefix": {
-          "value": "20.0.0.0/24"
+          "value": "40.0.0.0/24"
           }, 
       "subnet2Prefix": {
-          "value": "20.0.1.0/24"
+          "value": "40.0.1.0/24"
           }, 
       "subnet3Prefix": {
-           "value": "20.0.2.0/24"
+           "value": "40.0.2.0/24"
        }
     }
 
