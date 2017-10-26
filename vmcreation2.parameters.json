@@ -6,16 +6,13 @@
           "value": "pocarmtst1"
           },
       "vnetName": {
-          "value": "pocvnettst2"
-
+          "value": "pocvnetarmtst2"
           },
       "subnet1Name": {
-            "value": "pocvnettst2s1"
-
+            "value": "pocvnetarmtst2s1"
           },
        "subnet2Name": {
-            "value": "pocvnettst2s2"
-
+            "value": "pocvnetarmtst2s1"
           },
       "virtualMachineSize": {
            "value": "Standard_DS1_v2"
@@ -27,19 +24,19 @@
            "value": "vmPassword!123"
        }, 
       "virtualMachineName": {
-           "value": "pocvn2vm1"
+           "value": "pocarmvmtst2"
        },
       "dnsLabelPrefix": {
-           "value": "pocvn2dns1"
+           "value": "pocarmdns2"
        },
       "windowsOSVersion": {
            "value": "2016-Datacenter"
        },
       "publicIPAddressName": {
-           "value": "pocvn2PubIP1"
+           "value": "pocarmPubIP2"
        },
        "ipconfig": {
-           "value": "ipconfigvn2v1"
+           "value": "ipconfigarm2"
        }, 
        "applicationName": {
            "value": "POCApp"
