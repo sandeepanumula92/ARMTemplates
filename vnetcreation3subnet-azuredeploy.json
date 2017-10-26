@@ -25,6 +25,9 @@
     },
     "subnet3Name": {
       "type": "string"
+    },
+    "publicIPAddressName": {
+      "type": "string"
     }
   },
   "variables": {
