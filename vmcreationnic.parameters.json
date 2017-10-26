@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "storageaccountname": {
-      "value": "pocarmsa222"
+      "value": "pocarmsa333"
     },
     "vnetName": {
-      "value": "pocarmvnet222"
+      "value": "pocarmv333"
     },
     "subnet1Name": {
-      "value": "pocarmvnet222s1"
+      "value": "pocarmv333s1"
     },   
     "virtualMachineSize": {
       "value": "Standard_DS1_v2"
@@ -21,16 +21,16 @@
       "value": "vmPassword!123"
     },
     "virtualMachineName": {
-      "value": "pocarmvm222"
+      "value": "pocarmvm333"
     },   
     "windowsOSVersion": {
       "value": "2016-Datacenter"
     },
     "publicIPAddressName": {
-      "value": "pocarmPubIP222"
+      "value": "pocarmPubIP333"
     },
     "ipconfig": {
-      "value": "pocarmipconfig222"
+      "value": "pocarmipconfig333"
     }  
   } 
 }
