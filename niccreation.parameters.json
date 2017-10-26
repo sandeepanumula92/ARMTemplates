@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0", 
    "parameters": {    
       "vnetName": {
-          "value": "pocvnet12"
+          "value": "pocarmvnet111"
           },
       "subnet1Name": {
-            "value": "poc12subnet1"
+            "value": "pocarmvnet111s1"
           },       
       "publicIPAddressName": {
-           "value": "PubIP12"
+           "value": "pocarmPubIP111"
        }, 
        "ipconfig": {
-           "value": "ipconfigtst"
+           "value": "pocarmipconfig111"
        },
         "nicname": {
-      "value": "nicname"
+      "value": "pocarmnic111"
     }
   }
 }
