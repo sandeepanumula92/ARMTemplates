@@ -15,13 +15,13 @@
       "value": "vmPassword!123"
     },
     "virtualMachineName": {
-      "value": "pocarmvm111"
+      "value": "pocarmvm112"
     },
     "windowsOSVersion": {
       "value": "2016-Datacenter"
     },  
     "nicname": {
-      "value": "pocarmnic111"
+      "value": "pocarmnic112"
     }
   }
 }
