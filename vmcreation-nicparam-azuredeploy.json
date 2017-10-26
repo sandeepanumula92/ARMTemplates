@@ -46,7 +46,7 @@
       "name": "[variables('vmName')]",
       "location": "[resourceGroup().location]",   
       "dependsOn": [
-        "[variables('nicname')]"
+       "[concat('Microsoft.Network/virtualNetworks/', variables('nicname'))]"
       ],
       "properties": {
         "hardwareProfile": {
