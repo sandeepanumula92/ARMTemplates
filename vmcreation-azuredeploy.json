@@ -33,6 +33,9 @@
     "subnet2Name": {
       "type": "string"
     },   
+    "ipConfig": {
+      "type": "string"
+    },
     "windowsOSVersion": {
       "type": "string",
       "defaultValue": "2016-Datacenter",
