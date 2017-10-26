@@ -38,7 +38,7 @@
       "publicIPAddressName": {
            "value": "poctstPubIP1"
        },
-        "ipConfig": {
+        "ipconfig": {
            "value": "ipconfigtst1"
        }, 
        "applicationName": {
