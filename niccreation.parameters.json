@@ -13,6 +13,9 @@
        }, 
        "ipconfig": {
            "value": "ipconfigtst"
-       }
+       },
+        "nicname": {
+      "value": "nicname"
+    }
   }
 }
