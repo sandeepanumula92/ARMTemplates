@@ -34,10 +34,7 @@
        },
       "publicIPAddressName": {
            "value": "nestlePubIP12"
-       },
-       "nicName": {
-           "value": "mynestleVMNic12"
-       },
+       },       
        "applicationName": {
            "value": "POCApp"
        }
