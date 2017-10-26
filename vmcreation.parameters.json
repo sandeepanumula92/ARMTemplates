@@ -37,6 +37,9 @@
        },
        "nicName": {
            "value": "mynestleVMNic12"
+       },
+       "applicationName": {
+           "value": "POCApp"
        }
   }
 
