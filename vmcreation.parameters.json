@@ -6,13 +6,13 @@
           "value": "pocsa21"
           },
       "vnetName": {
-          "value": "nestlepocvnet12"
+          "value": "pocvnet12"
           },
       "subnet1Name": {
-            "value": "nestlepoc12subnet1"
+            "value": "poc12subnet1"
           },
        "subnet2Name": {
-            "value": "nestlepoc12subnet2"
+            "value": "poc12subnet2"
           },
       "virtualMachineSize": {
            "value": "Standard_DS1_v2"
@@ -24,16 +24,16 @@
            "value": "vmPassword!123"
        }, 
       "virtualMachineName": {
-           "value": "nestlevm12"
+           "value": "vm12"
        },
       "dnsLabelPrefix": {
-           "value": "nestledns12"
+           "value": "dns12"
        },
       "windowsOSVersion": {
            "value": "2016-Datacenter"
        },
       "publicIPAddressName": {
-           "value": "nestlePubIP12"
+           "value": "PubIP12"
        }, 
        "ipConfig": {
            "value": "ipconfigtst"
