@@ -13,11 +13,14 @@
     },
     "ipconfig": {
       "type": "string"
+    },
+    "nicname": {
+      "type": "string"
     }
   },
   "variables": {
     "virtualNetworkName": "[parameters('vnetName')]",
-    "nic1": "[concat(uniquestring(resourceGroup().id), 'nic1')]",
+    "nic1": "[parameters('nicname')]",
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "ipConfig": "[parameters('ipconfig')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
