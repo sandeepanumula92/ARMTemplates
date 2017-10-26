@@ -33,7 +33,7 @@
     "subnet2Name": {
       "type": "string"
     },   
-    "ipConfig": {
+    "ipconfig": {
       "type": "string"
     },
     "windowsOSVersion": {
