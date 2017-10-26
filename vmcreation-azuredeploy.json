@@ -57,6 +57,7 @@
     "nic1": "[concat(uniquestring(resourceGroup().id), 'nic1')]",
     "nic2": "[concat(uniquestring(resourceGroup().id), 'nic2')]",    
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
+    "ipConfig": "[parameters('ipconfig')]",
     "storageAccountName": "[parameters('storageaccountname')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnet1Name": "[parameters('subnet1Name')]",
@@ -93,7 +94,7 @@
       "properties": {
         "ipConfigurations": [
           {
-            "name": "ipconfig1",
+            "name": "[variables('ipConfig')]",
             "properties": {
               "subnet": {
                 "id": "[variables('subnet1Ref')]"
@@ -118,7 +119,7 @@
       "properties": {
         "ipConfigurations": [
           {
-            "name": "ipconfig1",
+            "name": "[variables('ipConfig')]",
             "properties": {
               "subnet": {
                 "id": "[variables('subnet2Ref')]"
