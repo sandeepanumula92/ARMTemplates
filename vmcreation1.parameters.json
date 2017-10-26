@@ -38,6 +38,9 @@
       "publicIPAddressName": {
            "value": "poctstPubIP1"
        },
+        "ipConfig": {
+           "value": "ipconfigtst1"
+       }, 
        "applicationName": {
            "value": "POCApp"
        }
