@@ -27,19 +27,19 @@
            "value": "vmPassword!123"
        }, 
       "virtualMachineName": {
-           "value": "pocvmtst2"
+           "value": "pocvn2vm1"
        },
       "dnsLabelPrefix": {
-           "value": "poctstdns2"
+           "value": "pocvn2dns1"
        },
       "windowsOSVersion": {
            "value": "2016-Datacenter"
        },
       "publicIPAddressName": {
-           "value": "poctstPubIP2"
+           "value": "pocvn2PubIP1"
        },
        "ipConfig": {
-           "value": "ipconfigtst2"
+           "value": "ipconfigvn2v1"
        }, 
        "applicationName": {
            "value": "POCApp"
