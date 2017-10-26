@@ -55,8 +55,7 @@
   },
   "variables": {
     "nic1": "[concat(uniquestring(resourceGroup().id), 'nic1')]",
-    "nic2": "[concat(uniquestring(resourceGroup().id), 'nic2')]",
-    "nicName": "[parameters('nicName')]",
+    "nic2": "[concat(uniquestring(resourceGroup().id), 'nic2')]",    
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "storageAccountName": "[parameters('storageaccountname')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
