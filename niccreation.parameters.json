@@ -9,13 +9,13 @@
             "value": "pocarmvnet111s1"
           },       
       "publicIPAddressName": {
-           "value": "pocarmPubIP111"
+           "value": "pocarmPubIP112"
        }, 
        "ipconfig": {
-           "value": "pocarmipconfig111"
+           "value": "pocarmipconfig112"
        },
         "nicname": {
-      "value": "pocarmnic111"
+      "value": "pocarmnic112"
     }
   }
 }
