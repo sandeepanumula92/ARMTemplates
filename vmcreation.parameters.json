@@ -35,7 +35,7 @@
       "publicIPAddressName": {
            "value": "PubIP12"
        }, 
-       "ipConfig": {
+       "ipconfig": {
            "value": "ipconfigtst"
        },       
        "applicationName": {
