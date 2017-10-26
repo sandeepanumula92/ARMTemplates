@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
    "vnetName": {
-          "value": "pocarmvnet111"
+          "value": "pocarmvnet222"
           },
       "subnet1Name": {
-          "value": "pocarmvnet111s1"
+          "value": "pocarmvnet222s1"
           },
       "subnet2Name": {
-          "value": "pocarmvnet111s2"
+          "value": "pocarmvnet222s2"
           },
       "subnet3Name": {
-          "value": "pocarmvnet111s3"
+          "value": "pocarmvnet222s3"
           },
       "vnetAddressPrefix": {
           "value": "30.0.0.0/16" 
