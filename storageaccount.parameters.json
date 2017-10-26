@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0", 
    "parameters": {
       "storageaccountname": {
-          "value": "pocarmtstsa11"
+          "value": "pocarmtstsa111"
           },
        "storageAccountType": {
            "value": "Standard_GRS"
