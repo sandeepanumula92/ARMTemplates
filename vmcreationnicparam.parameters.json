@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "storageaccountname": {
-      "value": "pocsatst21"
+      "value": "pocarmsa111"
     },   
     "virtualMachineSize": {
       "value": "Standard_DS1_v2"
@@ -15,13 +15,13 @@
       "value": "vmPassword!123"
     },
     "virtualMachineName": {
-      "value": "nestlevm12"
+      "value": "pocarmvm111"
     },
     "windowsOSVersion": {
       "value": "2016-Datacenter"
     },  
     "nicname": {
-      "value": "nicname"
+      "value": "pocarmnic111"
     }
   }
 }
