@@ -89,7 +89,7 @@
       },
       "dependsOn": [
                "[variables('publicIPAddressName')]",
-               "[variables('subnet1Ref'))]"
+               "[variables('subnet1Ref')]"
       ],
       "properties": {
         "ipConfigurations": [
@@ -117,7 +117,7 @@
         "Application": "[parameters('applicationName')]"
       },
       "dependsOn": [
-               "[variables('subnet2Ref'))]"
+               "[variables('subnet2Ref')]"
       ],
       "properties": {
         "ipConfigurations": [
