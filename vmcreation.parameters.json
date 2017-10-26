@@ -34,6 +34,9 @@
        },
       "publicIPAddressName": {
            "value": "nestlePubIP12"
+       }, 
+       "ipConfig": {
+           "value": "ipconfigtst"
        },       
        "applicationName": {
            "value": "POCApp"
