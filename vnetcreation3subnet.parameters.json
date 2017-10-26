@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
    "vnetName": {
-          "value": "pocarmvnettest1"
+          "value": "pocarmvnettest11"
           },
       "subnet1Name": {
-          "value": "pocarmvnettestsub1"
+          "value": "pocarmvnettest11sub1"
           },
       "subnet2Name": {
-          "value": "pocarmvnettestsub2"
+          "value": "pocarmvnettest11sub2"
           },
       "subnet3Name": {
-          "value": "pocarmvnettestsub3"
+          "value": "pocarmvnettest11sub3"
           },
       "vnetAddressPrefix": {
           "value": "30.0.0.0/16" 
@@ -27,10 +27,10 @@
            "value": "30.0.2.0/24"
        },
       "publicIPAddressName": {
-           "value": "pocarmPubIPAdd1"
+           "value": "pocarmPubIPAdd11"
        },
         "ipconfig": {
-           "value": "ipconfigarmpoc1"
+           "value": "ipconfigarmpoc11"
        }
     }
 }
