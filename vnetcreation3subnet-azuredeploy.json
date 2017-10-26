@@ -28,6 +28,9 @@
     },
     "publicIPAddressName": {
       "type": "string"
+    },
+    "ipconfig": {
+      "type": "string"
     }
   },
   "variables": {
