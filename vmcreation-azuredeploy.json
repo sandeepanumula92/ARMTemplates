@@ -32,7 +32,7 @@
     },
     "subnet2Name": {
       "type": "string"
-    },   
+    },
     "ipconfig": {
       "type": "string"
     },
@@ -57,8 +57,7 @@
     }
   },
   "variables": {
-    "nic1": "[concat(uniquestring(resourceGroup().id), 'nic1')]",
-    "nic2": "[concat(uniquestring(resourceGroup().id), 'nic2')]",    
+    "nic1": "[concat(uniquestring(resourceGroup().id), 'nic1')]",    
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "ipConfig": "[parameters('ipconfig')]",
     "storageAccountName": "[parameters('storageaccountname')]",
@@ -71,7 +70,7 @@
     "vmName": "[parameters('virtualMachineName')]"
   },
   "resources": [
-      {
+    {
       "apiVersion": "2017-06-01",
       "location": "[resourceGroup().location]",
       "name": "[variables('publicIPAddressName')]",
@@ -83,7 +82,7 @@
       },
       "type": "Microsoft.Network/publicIPAddresses"
     },
-     {
+    {
       "name": "[variables('nic1')]",
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2017-06-01",
@@ -92,7 +91,7 @@
         "Application": "[parameters('applicationName')]"
       },
       "dependsOn": [
-               "[variables('publicIPAddressName')]"
+        "[variables('publicIPAddressName')]"
       ],
       "properties": {
         "ipConfigurations": [
@@ -109,30 +108,8 @@
             }
           }
         ]
-      }
-    },
-    {
-      "name": "[variables('nic2')]",
-      "type": "Microsoft.Network/networkInterfaces",
-      "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",     
-      "tags": {
-        "Application": "[parameters('applicationName')]"
-      },     
-      "properties": {
-        "ipConfigurations": [
-          {
-            "name": "[variables('ipConfig')]",
-            "properties": {
-              "subnet": {
-                "id": "[variables('subnet2Ref')]"
-              },
-              "privateIPAllocationMethod": "Dynamic"
-            }
-          }
-        ]
-      }
-    },   
+      }    
+},   
      {
       "apiVersion": "2017-03-30",
       "type": "Microsoft.Compute/virtualMachines",
@@ -143,7 +120,6 @@
       },
       "dependsOn": [
                 "[variables('nic1')]",
-                "[variables('nic2')]",
                 "[variables('publicIPAddressName')]"
         ],
       "properties": {
@@ -183,12 +159,6 @@
                 "primary": true
               },
               "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic1'))]"
-            },
-            {
-              "properties": {
-                "primary": false
-              },
-              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic2'))]"
             }
           ]
         }
