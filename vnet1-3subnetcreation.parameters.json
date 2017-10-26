@@ -4,13 +4,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
    "vnetName": {
-          "value": "pocarmvnettest1"
+          "value": "pocarmvnet222"
           },
       "subnet1Name": {
-          "value": "pocarmvnettestsub1"
+          "value": "pocarmvnet222s1"
           },
       "subnet2Name": {
-          "value": "pocarmvnettestsub2"
+          "value": "pocarmvnet222s1"
           },
       "subnet3Name": {
           "value": "pocarmvnettestsub3"
