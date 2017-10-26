@@ -37,6 +37,7 @@
     "nic1": "[concat(uniquestring(resourceGroup().id), 'nic1')]",
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "ipConfig": "[parameters('ipconfig')]",    
+     "virtualNetworkName": "[parameters('vnetName')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnet1Name": "[parameters('subnet1Name')]",
     "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]"
