@@ -35,7 +35,7 @@
       "publicIPAddressName": {
            "value": "pocvn1PubIP3"
        },
-        "ipConfig": {
+        "ipconfig": {
            "value": "ipconfigvn1v3"
        }, 
        "applicationName": {
