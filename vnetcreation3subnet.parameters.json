@@ -25,12 +25,6 @@
           }, 
       "subnet3Prefix": {
            "value": "30.0.2.0/24"
-       },
-      "publicIPAddressName": {
-           "value": "pocarmPubIPAdd11"
-       },
-        "ipconfig": {
-           "value": "ipconfigarmpoc11"
        }
     }
 }
