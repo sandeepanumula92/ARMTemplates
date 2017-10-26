@@ -1,61 +1,31 @@
 {
 
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-
     "contentVersion": "1.0.0.0",
-
     "parameters": {
-
    "vnetName": {
-
-          "value": "pocvnettst1"
-
+          "value": "pocvnetarmtst1"
           },
-
       "subnet1Name": {
-
-          "value": "pocvnettst1s1"
-
-
+          "value": "pocvnetarmtst1s1"
           },
-
       "subnet2Name": {
-
-          "value": "pocvnettst1s2"
-
-
+          "value": "pocvnetarmtst1s2"
           },
-
       "subnet3Name": {
-
-          "value": "pocvnettst1s3"
-
+          "value": "pocvnetarmtst1s3"
           },
-
       "vnetAddressPrefix": {
-
-          "value": "10.0.0.0/16"
- 
+          "value": "10.0.0.0/16" 
          },
-
        "subnet1Prefix": {
-
           "value": "10.0.0.0/24"
-
-          },
- 
+          }, 
       "subnet2Prefix": {
-
           "value": "10.0.1.0/24"
-
-          },
- 
+          }, 
       "subnet3Prefix": {
-
            "value": "10.0.2.0/24"
-
        }
-
     }
-
 }
