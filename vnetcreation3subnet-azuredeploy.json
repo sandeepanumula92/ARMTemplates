@@ -25,34 +25,12 @@
     },
     "subnet3Name": {
       "type": "string"
-    },
-    "publicIPAddressName": {
-      "type": "string"
-    },
-    "ipconfig": {
-      "type": "string"
     }
   },
-  "variables": {
-    "nic1": "[concat(uniquestring(resourceGroup().id), 'nic1')]",
-    "publicIPAddressName": "[parameters('publicIPAddressName')]",
-    "ipConfig": "[parameters('ipconfig')]",    
-     "virtualNetworkName": "[parameters('vnetName')]",
-    "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
-    "subnet1Name": "[parameters('subnet1Name')]",
-    "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]"
+  "variables": { 
   },
   "resources": [
-    {
-      "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",
-      "name": "[variables('publicIPAddressName')]",   
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
-      },
-      "type": "Microsoft.Network/publicIPAddresses"
-    },
-    {
+   {
       "apiVersion": "2016-09-01",
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[parameters('vnetName')]",
@@ -78,32 +56,6 @@
             "name": "[parameters('subnet3Name')]",
             "properties": {
               "addressPrefix": "[parameters('subnet3Prefix')]"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name": "[variables('nic1')]",
-      "type": "Microsoft.Network/networkInterfaces",
-      "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",    
-      "dependsOn": [
-        "[variables('publicIPAddressName')]",
-        "[variables('subnet1Ref')]"
-      ],
-      "properties": {
-        "ipConfigurations": [
-          {
-            "name": "[variables('ipConfig')]",
-            "properties": {
-              "subnet": {
-                "id": "[variables('subnet1Ref')]"
-              },
-              "privateIPAllocationMethod": "Dynamic",
-              "publicIpAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]"
-              }
             }
           }
         ]
