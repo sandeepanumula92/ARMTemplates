@@ -3,17 +3,17 @@
     "contentVersion": "1.0.0.0", 
    "parameters": {
       "storageaccountname": {
-          "value": "pocarmtst1"
+          "value": "pocarmtstsa"
           },
       "vnetName": {
-          "value": "pocvnetarmtst1"
+          "value": "pocarmvnet1"
 
           },
       "subnet1Name": {
-            "value": "pocvnetarmtst1s1"
+            "value": "pocarmv1sub1"
           },
        "subnet2Name": {
-            "value": "pocvnetarmtst1s2"
+            "value": "pocarmv1sub2"
           },
       "virtualMachineSize": {
            "value": "Standard_DS1_v2"
@@ -25,19 +25,19 @@
            "value": "vmPassword!123"
        }, 
       "virtualMachineName": {
-           "value": "pocarmvmtst1"
+           "value": "pocarmvm1"
        },
       "dnsLabelPrefix": {
-           "value": "pocarmdns1"
+           "value": "pocarmdnslbl1"
        },
       "windowsOSVersion": {
            "value": "2016-Datacenter"
        },
       "publicIPAddressName": {
-           "value": "pocarmPubIP1"
+           "value": "pocarmPubIPAdd1"
        },
         "ipconfig": {
-           "value": "ipconfigarm1"
+           "value": "ipconfigarmpoc1"
        }, 
        "applicationName": {
            "value": "POCApp"
