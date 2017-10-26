@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0", 
    "parameters": {
       "storageaccountname": {
-          "value": "pocsa21"
+          "value": "pocsatst21"
           },
       "vnetName": {
           "value": "pocvnet12"
