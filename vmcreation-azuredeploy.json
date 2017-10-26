@@ -32,10 +32,7 @@
     },
     "subnet2Name": {
       "type": "string"
-    },
-    "nicName": {
-      "type": "string"
-    },
+    },   
     "windowsOSVersion": {
       "type": "string",
       "defaultValue": "2016-Datacenter",
