@@ -1,0 +1,113 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": {
+      "type": "string"
+    },
+    "vnetAddressPrefix": {
+      "type": "string"
+    },
+    "subnet1Prefix": {
+      "type": "string"
+    },
+    "subnet1Name": {
+      "type": "string"
+    },
+    "subnet2Prefix": {
+      "type": "string"
+    },
+    "subnet2Name": {
+      "type": "string"
+    },
+    "subnet3Prefix": {
+      "type": "string"
+    },
+    "subnet3Name": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "nic1": "[concat(uniquestring(resourceGroup().id), 'nic1')]",
+    "publicIPAddressName": "[parameters('publicIPAddressName')]",
+    "ipConfig": "[parameters('ipconfig')]",    
+    "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
+    "subnet1Name": "[parameters('subnet1Name')]",
+    "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2017-06-01",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('publicIPAddressName')]",
+      "tags": {
+        "Application": "[parameters('applicationName')]"
+      },
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic"
+      },
+      "type": "Microsoft.Network/publicIPAddresses"
+    },
+    {
+      "apiVersion": "2016-09-01",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('vnetName')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [ "[parameters('vnetAddressPrefix')]" ]
+        },
+        "subnets": [
+          {
+            "name": "[parameters('subnet1Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet1Prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('subnet2Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet2Prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('subnet3Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet3Prefix')]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "[variables('nic1')]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2017-06-01",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Application": "[parameters('applicationName')]"
+      },
+      "dependsOn": [
+        "[variables('publicIPAddressName')]",
+        "[variables('subnet1Ref')]"
+      ],
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "[variables('ipConfig')]",
+            "properties": {
+              "subnet": {
+                "id": "[variables('subnet1Ref')]"
+              },
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIpAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+
