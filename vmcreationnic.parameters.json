@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "storageaccountname": {
-      "value": "pocarmsa333"
+      "value": "pocarmsa27oct"
     },
     "vnetName": {
       "value": "pocarmv333"
