@@ -22,7 +22,7 @@
         "keyVault": {
           "id": "/subscriptions/7f404d67-2038-4904-82a2-9f0e9385e0e8/resourceGroups/dmsession/providers/Microsoft.KeyVault/vaults/devLab9404"
         },
-        "secretName": "vmpassword1"
+        "secretName": "vmpassword2"
       }
     },
     "virtualMachineName": {
