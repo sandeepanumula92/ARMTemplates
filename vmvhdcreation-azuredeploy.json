@@ -59,7 +59,7 @@
     
     {
       "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",
+      "location": "South India",
       "name": "[variables('publicIPAddressName')]",      
       "properties": {
         "publicIPAllocationMethod": "Dynamic"
@@ -70,7 +70,7 @@
       "name": "[variables('nic1')]",
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",    
+      "location": "South India",    
       "dependsOn": [
         "[variables('publicIPAddressName')]"
       ],
@@ -96,7 +96,7 @@
       "apiVersion": "2017-03-30",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[variables('vmName')]",
-      "location": "[resourceGroup().location]",
+      "location": "South India",
  "dependsOn": [
         "[variables('nic1')]",
         "[variables('publicIPAddressName')]"
