@@ -34,7 +34,7 @@
       "apiVersion": "2016-09-01",
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[parameters('vnetName')]",
-      "location": "[resourceGroup().location]",
+      "location": "South India",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [ "[parameters('vnetAddressPrefix')]" ]
