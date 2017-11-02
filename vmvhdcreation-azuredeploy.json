@@ -92,7 +92,7 @@
               "properties": {
                 "primary": true
               },
-              "id": "[resourceId('Microsoft.Network/networkInterfaces','win2016303')]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces','vs2017494')]"
             }
           ]
         }
