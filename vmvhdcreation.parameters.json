@@ -6,10 +6,10 @@
       "value": "dmsessionstorageac"
     },
     "vnetName": {
-      "value": "dmsession-vnet"
+      "value": "armvhdvnet"
     },
     "subnet1Name": {
-      "value": "default"
+      "value": "armvhdvnets1"
     },
     "virtualMachineSize": {
       "value": "Standard_DS1_v2"
@@ -26,16 +26,16 @@
       }
     },
     "virtualMachineName": {
-      "value": "pocarmvm333"
+      "value": "armvmvhd1"
     },
     "windowsOSVersion": {
       "value": "2016-Datacenter"
     },
     "publicIPAddressName": {
-      "value": "pocarmPubIP333"
+      "value": "armvhdPubIP1"
     },
     "ipconfig": {
-      "value": "pocarmipconfig333"
+      "value": "armvhdipconfig333"
     }
   }
 }
