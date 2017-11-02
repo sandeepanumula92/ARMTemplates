@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageaccountname": {
+      "value": "dmsessionstorageac"
+    },
+    "vnetName": {
+      "value": "pocarmv333"
+    },
+    "subnet1Name": {
+      "value": "pocarmv333s1"
+    },
+    "virtualMachineSize": {
+      "value": "Standard_DS1_v2"
+    },
+    "adminUsername": {
+      "value": "vmAdmin"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/7f404d67-2038-4904-82a2-9f0e9385e0e8/resourceGroups/dmsession/providers/Microsoft.KeyVault/vaults/devLab9404"
+        },
+        "secretName": "vmpassword2"
+      }
+    },
+    "virtualMachineName": {
+      "value": "pocarmvm333"
+    },
+    "windowsOSVersion": {
+      "value": "2016-Datacenter"
+    },
+    "publicIPAddressName": {
+      "value": "pocarmPubIP333"
+    },
+    "ipconfig": {
+      "value": "pocarmipconfig333"
+    }
+  }
+}
