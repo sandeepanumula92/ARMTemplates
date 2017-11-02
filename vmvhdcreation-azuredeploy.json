@@ -10,7 +10,7 @@
     },
     "storageaccountname": {
       "type": "string"
-     
+
     },
     "virtualMachineName": {
       "type": "string"
@@ -44,20 +44,20 @@
     }
   },
   "variables": {
-   
+
     "storageAccountName": "[parameters('storageaccountname')]",
-   
+
     "vmName": "[parameters('virtualMachineName')]"
   },
   "resources": [
-    
-    
+
+
     {
       "apiVersion": "2017-03-30",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[variables('vmName')]",
       "location": "[resourceGroup().location]",
-      
+
       "properties": {
         "hardwareProfile": {
           "vmSize": "[parameters('virtualMachineSize')]"
@@ -83,8 +83,9 @@
             },
             "caching": "ReadWrite"
 
-          },
-         
+          }
+        },
+
         "networkProfile": {
           "networkInterfaces": [
             {
@@ -97,6 +98,8 @@
         }
       }
     }
-  ],
-  "outputs": {}
-}
+  ]
+
+      
+    }
+  
