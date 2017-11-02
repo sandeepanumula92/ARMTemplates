@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+   "vnetName": {
+          "value": "armvhdvnet"
+          },
+      "subnet1Name": {
+          "value": "armvhdvnets1"
+          },
+      "subnet2Name": {
+          "value": "armvhdvnets2"
+          },
+      "subnet3Name": {
+          "value": "armvhdvnets3"
+          },
+      "vnetAddressPrefix": {
+          "value": "50.0.0.0/16" 
+         },
+       "subnet1Prefix": {
+          "value": "50.0.0.0/24"
+          }, 
+      "subnet2Prefix": {
+          "value": "50.0.1.0/24"
+          }, 
+      "subnet3Prefix": {
+           "value": "50.0.2.0/24"
+       }
+    }
+}
