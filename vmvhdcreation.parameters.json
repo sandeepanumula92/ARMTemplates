@@ -32,10 +32,10 @@
       "value": "2016-Datacenter"
     },
     "publicIPAddressName": {
-      "value": "armvhdPubIP1"
+      "value": "armvhdPubIP12"
     },
     "ipconfig": {
-      "value": "armvhdipconfig333"
+      "value": "armvhdipconfig12"
     }
   }
 }
