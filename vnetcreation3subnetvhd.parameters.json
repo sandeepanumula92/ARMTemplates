@@ -3,28 +3,28 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
    "vnetName": {
-          "value": "armvhdvnet"
+          "value": "armvhdvnet1"
           },
       "subnet1Name": {
-          "value": "armvhdvnets1"
+          "value": "armvhdvnet1s1"
           },
       "subnet2Name": {
-          "value": "armvhdvnets2"
+          "value": "armvhdvnet1s2"
           },
       "subnet3Name": {
-          "value": "armvhdvnets3"
+          "value": "armvhdvnet1s3"
           },
       "vnetAddressPrefix": {
-          "value": "50.0.0.0/16" 
+          "value": "60.0.0.0/16" 
          },
        "subnet1Prefix": {
-          "value": "50.0.0.0/24"
+          "value": "60.0.0.0/24"
           }, 
       "subnet2Prefix": {
-          "value": "50.0.1.0/24"
+          "value": "60.0.1.0/24"
           }, 
       "subnet3Prefix": {
-           "value": "50.0.2.0/24"
+          "value": "60.0.2.0/24"
        }
     }
 }
