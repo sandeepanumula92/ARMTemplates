@@ -119,10 +119,10 @@
             "name": "VMwindows-osDisk",
             "createOption": "FromImage",
             "image": {
-              "uri": "https://dmsessionstorageac.blob.core.windows.net/vhd/ConvertedVHD.vhd"
+              "uri": "https://dmsessionstorageac.blob.core.windows.net/vhdnew/ConvertedVHD.vhd"
             },
             "vhd": {
-              "uri": "[concat('http://','dmsessionstorageac','.blob.core.windows.net/vhds/',parameters('virtualMachineName'),'-osDisk.vhd')]"
+              "uri": "[concat('http://','dmsessionstorageac','.blob.core.windows.net/vhdnew/',parameters('virtualMachineName'),'-osDisk.vhd')]"
             },
             "caching": "ReadWrite"
 
