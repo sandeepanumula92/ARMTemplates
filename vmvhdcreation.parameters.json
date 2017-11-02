@@ -26,16 +26,16 @@
       }
     },
     "virtualMachineName": {
-      "value": "armvmvhd1"
+      "value": "armvmvhd123"
     },
     "windowsOSVersion": {
       "value": "2016-Datacenter"
     },
     "publicIPAddressName": {
-      "value": "armvhdPubIP12"
+      "value": "armvhdPubIP123"
     },
     "ipconfig": {
-      "value": "armvhdipconfig12"
+      "value": "armvhdipconfig123"
     }
   }
 }
