@@ -44,7 +44,7 @@
     }
   },
   "variables": {
-    "nic1": "[concat(uniquestring(resourceGroup().id), 'nic11')]",
+    "nic1": "nic17nov",
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "ipConfig": "[parameters('ipconfig')]",
     "storageAccountName": "[parameters('storageaccountname')]",
