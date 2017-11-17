@@ -8,10 +8,10 @@
     "adminPassword": {
       "type": "securestring"
     },
-    //"storageaccountname": {
-      //"type": "string",
-      //"defaultValue": "pocsa21"
-    //},
+    "storageaccountname": {
+      "type": "string",
+      "defaultValue": "pocsa21"
+    },
     "virtualMachineName": {
       "type": "string"
     },
@@ -47,7 +47,7 @@
     "nic1": "[concat(uniquestring(resourceGroup().id), 'nic11')]",
     "publicIPAddressName": "[parameters('publicIPAddressName')]",
     "ipConfig": "[parameters('ipconfig')]",
-   //"storageAccountName": "[parameters('storageaccountname')]",
+   "storageAccountName": "[parameters('storageaccountname')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnet1Name": "[parameters('subnet1Name')]",
     "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]",    
